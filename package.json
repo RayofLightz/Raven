@@ -5,7 +5,7 @@
   "main": "index.js",
   "preferGlobal":true,
   "bin":{
-    "flock":"./index.js"
+    "raven":"./index.js"
   },
   "engines":{
     "node": ">=7.9"
@@ -15,7 +15,7 @@
   },
   "dependencies":{
     "ws-pcap2":"^3.3.1",
-    "arpjs":"^1.11.1"
+    "arpjs":"^1.1.11"
   },
   "repository": {
     "type": "git",

@@ -7,7 +7,7 @@ const fs = require("fs");
 //check for all args
 console.log(process.argv);
 if(process.argv.length < 3 ){
-   console.log("flock\nversion 1\nusage flock <gateway> <target> ");
+   console.log("raven\nversion 1\nusage flock <gateway> <target> ");
    process.exit(1);
 }
 //check if user is root
