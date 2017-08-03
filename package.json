@@ -1,0 +1,30 @@
+{
+  "name": "flock",
+  "version": "1.0.0",
+  "description": "An automactic ARP posioning packet sniffer",
+  "main": "index.js",
+  "preferGlobal":true,
+  "bin":{
+    "flock":"./index.js"
+  },
+  "engines":{
+    "node": ">=7.9"
+  },
+  "scripts": {
+    "test": "./index.js"
+  },
+  "dependencies":{
+    "ws-pcap2":"^3.3.1",
+    "arpjs":"^1.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RayofLightz/flock.git"
+  },
+  "author": "Tristan Messner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RayofLightz/flock/issues"
+  },
+  "homepage": "https://github.com/RayofLightz/flock#readme"
+}
