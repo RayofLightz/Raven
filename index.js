@@ -5,7 +5,6 @@ const pcap = require("pcap2");
 const arpjs = require("arpjs");
 const fs = require("fs");
 //check for all args
-console.log(process.argv);
 if(process.argv.length < 3 ){
    console.log("raven\nversion 1\nusage flock <gateway> <target> ");
    process.exit(1);
@@ -27,5 +26,17 @@ let timeout = setTimeout(function(){spoof(process.argv[2],process.argv[3]);},100
 const pcapSession = new pcap.Session();
 
 pcapSession.on('packet',function(rawPacket){
-    console.log(rawPacket);
+    var packets_file = fs.createWriteStream("packets.txt",defaults = {
+  flags: 'w',
+  defaultEncoding: 'utf8',
+  fd: null,
+  mode: 0o666,
+  autoClose: true
+});
+    packets_file.once('open',function(fd){
+      var packet_ = pcap.decode.packet(rawPacket);
+      packets_file.write(JSON.stringify(packet_));
+      packets_file.write('\n');
+      packets_file.end();
+    });
 });
