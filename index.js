@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// flock
+// raven
 // author Tristan Messner
 const pcap = require("pcap2");
 const arpjs = require("arpjs");
