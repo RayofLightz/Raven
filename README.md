@@ -22,3 +22,8 @@ then run as root (not sudo)
 ```bash
 raven <gateway ip> <target>
 ```
+# tcp filter
+```bash
+raven <gateway ip> <target> -t
+```
+it dose not matter where -t is as long as it is in the command

