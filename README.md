@@ -1,6 +1,9 @@
 # Raven
 An ARP poisoning packet sniffer
 
+# License
+This program is under the mit license that being said please don't use this for any illegal actions or misconducts.
+
 # install
 download dependences
 ```bash
@@ -20,10 +23,9 @@ this allows for your box to forward traffic
 
 then run as root (not sudo)
 ```bash
-raven <gateway ip> <target>
+raven <gateway ip> <target> **args
 ```
 # tcp filter
 ```bash
 raven <gateway ip> <target> -t
 ```
-it dose not matter where -t is as long as it is in the command
